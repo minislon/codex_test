@@ -1,0 +1,11 @@
+{
+  "name": "codex_tetris",
+  "version": "1.0.0",
+  "description": "Simple web-based Tetris game",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
