@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tetris</title>
+  <title>Солнечный счётчик</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="board" width="240" height="480"></canvas>
-  <div id="score">0</div>
+  <main class="counter">
+    <h1 class="counter__title">Простой браузерный счётчик</h1>
+    <p class="counter__value" id="counterValue" aria-live="polite">0</p>
+
+    <div class="counter__controls">
+      <button class="counter__button" id="decreaseBtn" type="button">−</button>
+      <button class="counter__button counter__button--reset" id="resetBtn" type="button">Сброс</button>
+      <button class="counter__button" id="increaseBtn" type="button">+</button>
+    </div>
+  </main>
+
   <script src="script.js" defer></script>
 </body>
 </html>
