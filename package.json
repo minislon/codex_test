@@ -1,11 +1,17 @@
 {
-  "name": "codex_tetris",
+  "name": "wb-tax-calculator",
   "version": "1.0.0",
-  "description": "Simple web-based Tetris game",
+  "description": "WB API tax helper for Russian tax regimes",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"No tests specified\""
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
   },
-  "keywords": [],
+  "keywords": ["wildberries", "tax", "wb api"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
