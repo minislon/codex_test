@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WB → Налоги (черновик)</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Калькулятор налогов по WB API</h1>
+    <p class="note">Подключите ключ WB, выберите период — сервис сам заберёт отчёт и посчитает налог.</p>
+
+    <form id="taxForm" class="card">
+      <label>WB API ключ (категория Финансы)
+        <input type="password" id="apiKey" required placeholder="Вставьте токен" />
+      </label>
+
+      <div class="row">
+        <label>Дата от
+          <input type="date" id="dateFrom" required />
+        </label>
+        <label>Дата до
+          <input type="date" id="dateTo" required />
+        </label>
+      </div>
+
+      <label>Режим налогообложения
+        <select id="regime" required>
+          <option value="usn_income">УСН Доходы 6%</option>
+          <option value="usn_income_expenses">УСН Доходы-Расходы 15%</option>
+        </select>
+      </label>
+
+      <div class="row">
+        <label>Уплаченные взносы (для УСН 6%)
+          <input type="number" id="insurancePaid" min="0" step="0.01" value="0" />
+        </label>
+        <label>Ручные расходы (добавочно)
+          <input type="number" id="manualExpenses" min="0" step="0.01" value="0" />
+        </label>
+      </div>
+
+      <label class="inline">
+        <input type="checkbox" id="includeReturns" checked />
+        Учитывать возвраты как уменьшение дохода
+      </label>
+
+      <button type="submit">Рассчитать</button>
+      <p id="status"></p>
+    </form>
+
+    <section id="result" class="card hidden"></section>
+
+    <section class="card hint">
+      <h2>Как запустить</h2>
+      <ol>
+        <li>Локально: <code>npm install && npm start</code></li>
+        <li>В GitHub сам сайт не исполняется как сервер. Для запуска используйте Render/Railway/Fly.io.</li>
+        <li>На Render: New Web Service → подключить репозиторий → Build: <code>npm install</code>, Start: <code>npm start</code>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
